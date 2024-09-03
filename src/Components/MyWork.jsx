@@ -5,7 +5,7 @@ import { RiTailwindCssFill } from 'react-icons/ri';
 const works = [
     {
         name: "The-Wild-Oasis",
-        link: "http://thunderous-smakager-f78d7b.netlify.app",
+        link: "https://the-wild-oasis-phi-five.vercel.app",
         tec: "React",
         img: "./oasisjpg.jpg",
         des: "The Wild Oasis is a React application build for hotel service. I built this project while practicing React, Supabase and more ,using a lot of libraries like react-query, react-router-dom , react-hooks-useform ,etc provide validation ,authentication,autherization and dark mode and crud operations",
