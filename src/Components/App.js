@@ -6,7 +6,7 @@ import MyWork from './MyWork';
 import NavBar from './NavBar';
 import { useEffect, useState } from 'react';
 
-
+let x =10
 function App() {
   const [toggle,setToggle] = useState(false)
   // const scrollx = useState(window.scrollY)
