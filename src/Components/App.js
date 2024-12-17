@@ -11,13 +11,7 @@ import PageNotFound from './PageNotFound';
 
 
 function App() {
-  // const [toggle,setToggle] = useState(false)
   
-  //   window.addEventListener('scroll',onscroll)
-
-  //  function handleScroll(){
-  //   document.documentElement.scrollTop = 0
-  //  }
   const router = createHashRouter([
     {
       element: <Layout />, children: [
@@ -44,5 +38,4 @@ function App() {
 
 
 export default App;
-/* { toggle&& <div onClick={handleScroll} className=' cursor-pointer w-fit text-white bg-black text-2xl py-3 px-3 rounded-full fixed bottom-5 right-5'><IoIosArrowUp /></div> }
- */ 
+ 
