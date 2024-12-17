@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { IoIosSend } from 'react-icons/io'
 import emailjs from "@emailjs/browser"
 
@@ -9,7 +9,8 @@ export default function Contact() {
     const [name,SetName] = useState("")
     const [email,SetEmail] = useState("")
     const [message,SetMessage] = useState("")
-
+    
+        
     function handleSumbit(e){
         e.preventDefault()
         if(!name || !email || !message) return
@@ -29,7 +30,7 @@ export default function Contact() {
         }).catch(err=>console.log(err))
     }
   return (
-    <div className='py-5 mt-3'>
+    <div className='py-5 mt-3 h-[100vh]' >
         <h2 className='text-xl sm:text-3xl  text-center'>Let's Work Together</h2>
 
         <form onSubmit={handleSumbit} className='bg-slate-100 w-full sm:w-2/3 mx-auto py-5 px-6 rounded-lg mt-5 dark:bg-black shadow-md'  >

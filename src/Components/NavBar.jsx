@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaBars, FaMoon } from 'react-icons/fa'
 import { GoSun } from 'react-icons/go'
 import AltNav from './AltNav'
 import Mode from './Mode'
+import { Link } from 'react-router-dom'
 
 export default function NavBar() {
     const [mode,setMode] = useState(true)
-   function handleScrollAbout(){
-        document.documentElement.scrollTop = 0
-        
-   }
-   function handleScrollProject(){
-        document.documentElement.scrollTop = 600
-        
-   }
-   function handleScrollcontact(){
-        document.documentElement.scrollTop = 3000
-        
-   }
+    
+   
     useEffect(()=>{
         if(document.documentElement.classList.contains("dark")){
             setMode(false)
@@ -31,9 +22,9 @@ export default function NavBar() {
 
            
             <ul className='flex '>
-                <li onClick={handleScrollAbout} className='py-3 px-4 cursor-pointer hover:text-blue-500 transition-all duration-200'>About</li>
-                <li onClick={handleScrollProject} className='py-3 px-4 cursor-pointer hover:text-blue-500 transition-all duration-200'>Projects</li>
-                <li onClick={handleScrollcontact} className='py-3 px-4 cursor-pointer hover:text-blue-500 transition-all duration-200'>Contact us</li>
+               <Link to={"/"}> <li className='py-3 px-4 cursor-pointer hover:text-blue-500 transition-all duration-200'>About</li></Link>
+               <Link to={"/work"}> <li className='py-3 px-4 cursor-pointer hover:text-blue-500 transition-all duration-200'>Projects</li> </Link> 
+               <Link to={"/contact"}> <li className='py-3 px-4 cursor-pointer hover:text-blue-500 transition-all duration-200'>Contact us</li></Link>
                 
             <Mode   />
             </ul>

@@ -4,38 +4,45 @@ import About from './About';
 import Contact from './Contact';
 import MyWork from './MyWork';
 import NavBar from './NavBar';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
+import Layout from './Layout';
+import PageNotFound from './PageNotFound';
 
-let x =10
+
 function App() {
-  const [toggle,setToggle] = useState(false)
-  // const scrollx = useState(window.scrollY)
- 
-    function onscroll(e){
-      if(document.documentElement.scrollTop > 300) setToggle(true)
-      if(document.documentElement.scrollTop < 300) setToggle(false)
-      
-    }
-    window.addEventListener('scroll',onscroll)
-
-   function handleScroll(){
-    document.documentElement.scrollTop = 0
-   }
+  // const [toggle,setToggle] = useState(false)
   
+  //   window.addEventListener('scroll',onscroll)
+
+  //  function handleScroll(){
+  //   document.documentElement.scrollTop = 0
+  //  }
+  const router = createHashRouter([
+    {
+      element: <Layout />, children: [
+
+        
+        { path: "/", element: <About />  },
+        { path: "work", element: <MyWork />  },
+        { path: "contact", element: <Contact/>  },
+       
+        { path: "*", element:  <PageNotFound />  },
+        
+        
+      ]
+    },
+    
+  ])
   return (
-  <div className='main dark:bg-black dark:text-white '>
-    <NavBar/>
-
-    <About/>
-
-    <MyWork/>
-
-    <Contact/>
-
-
-{ toggle&& <div onClick={handleScroll} className=' cursor-pointer w-fit text-white bg-black text-2xl py-3 px-3 rounded-full fixed bottom-5 right-5'><IoIosArrowUp /></div> }
- </div>
-  );
+    <RouterProvider router={router} />
+  )
 }
 
+  
+  
+
+
 export default App;
+/* { toggle&& <div onClick={handleScroll} className=' cursor-pointer w-fit text-white bg-black text-2xl py-3 px-3 rounded-full fixed bottom-5 right-5'><IoIosArrowUp /></div> }
+ */ 

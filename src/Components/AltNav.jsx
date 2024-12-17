@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { FaBars, FaMoon } from 'react-icons/fa'
-import { GoSun } from 'react-icons/go'
+import React, {  useState } from 'react'
+import { FaBars } from 'react-icons/fa'
+
 import Mode from './Mode'
 
 export default function AltNav() {
